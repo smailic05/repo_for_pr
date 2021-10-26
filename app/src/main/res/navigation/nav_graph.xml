@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.storageapp.ui.fragments.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/main_fragment">
+        <action
+            android:id="@+id/action_mainFragment_to_addDogFragment"
+            app:destination="@id/addDogFragment">
+            <argument
+                android:name="update"
+                android:defaultValue="-1L"
+                app:argType="long" />
+            <argument
+                android:name="delete"
+                android:defaultValue="false"
+                app:argType="boolean" />
+        </action>
+
+    </fragment>
+    <fragment
+        android:id="@+id/addDogFragment"
+        android:name="com.example.storageapp.ui.fragments.AddDogFragment"
+        android:label="AddDogFragment" >
+        <argument
+            android:name="update"
+            android:defaultValue="-1L"
+            app:argType="long" />
+        <argument
+            android:name="delete"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.storageapp.ui.fragments.SettingFragment"
+        android:label="SettingFragment" />
+</navigation>
